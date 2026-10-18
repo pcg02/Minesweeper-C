@@ -1,13 +1,12 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-typedef enum {Empty, Bomb} CellStatus;
+#include <stdint.h>
 
 struct Board
 {
     unsigned int board_size;
-    CellStatus* board_data;
-    
+    uint8_t* raw_data; // first numbers -> bombs around; max number -> bomb
 };
 
 void initializeBoard(struct Board* board, unsigned int board_size);
