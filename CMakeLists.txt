@@ -25,8 +25,17 @@ if (NOT raylib_FOUND) # If there's none, fetch and build raylib
   endif()
 endif()
 
+set(SOURCE
+    main.c
+    src/Board.c
+)
+
+
 # Our Project
-add_executable(${PROJECT_NAME} main.c)
+add_executable(${PROJECT_NAME} ${SOURCE})
+
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
 #set(raylib_VERBOSE 1)
 target_link_libraries(${PROJECT_NAME} raylib)
 
