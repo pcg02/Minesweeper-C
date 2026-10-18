@@ -17,7 +17,7 @@ void initializeBoard(struct Board* board, unsigned int board_size, unsigned int 
 void drawAsciiBoard(struct Board* board) {
     printf("\nData:\nboard_size: %u\n num_bombs: %u\n\n", board->board_size, board->num_bombs);
     for (unsigned int i = 1; i <= board->board_size * board->board_size; i++) {
-        printf("%d", board->raw_data[i]);
+        printf("[%d]", board->raw_data[i]);
         if (i % board->board_size == 0) {
             printf("\n");
         }
