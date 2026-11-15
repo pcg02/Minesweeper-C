@@ -28,6 +28,7 @@ endif()
 set(SOURCE
     main.c
     src/Board.c
+    src/BoardGui.c
 )
 
 

@@ -1,4 +1,5 @@
 #include "Board.h"
+#include "BoardGui.h"
 
 #include <stdlib.h>
 #include <time.h>
@@ -11,7 +12,6 @@ void initializeBoard(struct Board* board, unsigned int board_size, unsigned int 
     for (unsigned int i = 0; i <= board_size * board_size; i++) {
         board->raw_data[i] = 0u;
     }
-
 }
 
 void drawAsciiBoard(struct Board* board) {

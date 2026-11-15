@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 #include "include/Board.h"
+#include "include/BoardGui.h"
 
 int main() {
 
@@ -14,6 +15,22 @@ int main() {
 
     generateBombPositions(&_board);
     drawAsciiBoard(&_board);
+
+    struct BoardGui _gui;
+    _gui.screenWidth = 800;
+    _gui.screenHeight = 600;
+    _gui.windowName = "Minesweeper";
+    initializeBoardGui(&_gui);
+
+    while (!WindowShouldClose()) {
+        BeginDrawing();
+        ClearBackground(RAYWHITE);
+        
+        layoutCells(&_board);
+
+        EndDrawing();
+    }
+
     
     return 0;
 }
